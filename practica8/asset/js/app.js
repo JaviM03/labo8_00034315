@@ -28,7 +28,7 @@ navSlide();
 
 var cont=1;
 var bitacoras=[];
-var formulario =document.getElementById("Bitacoras")
+var formulario =document.getElementById("bitacora")
 
 formulario.addEventListener("submit", (evt) => {
     evt.preventDefault(); 
@@ -82,3 +82,30 @@ const eliminar= (tbody)=>{
     }); 
     agregar(); 
    } 
+
+
+   /*
+   
+   ¿Qué hace el método evt.preventDefault() ?
+   ¿Qué es lo que contiene formulario[x]?
+   ¿Qué contienen las variables tr y td ?
+
+¿Qué contienen la variable content ?
+
+¿Qué valor tendra tbody al finalizar la iteración?
+
+Describa en pocas palabras lo que realizara esta función
+
+¿Qué es lo que hace .firstChild?
+
+Después de realizar el while ¿Comó quedara el elemento tbody ?
+¿Qué es lo que obtenemos cuando se ejecuta item.childNodes[i].textContent;
+¿Qué es lo que obtenemos cuando se realiza document.querySelector(".tabla-btc tbody") ?
+
+ ¿Qué hace el método childElementCount?
+
+¿Qué se mostrara en pantalla cuando se ejecute la función agregar()?
+
+ ¿Qué se mostrara en el navegador despues de ejecutar la función mostrar?
+
+   */
