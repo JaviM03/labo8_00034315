@@ -38,9 +38,19 @@ formulario.addEventListener("submit", (evt) => {
         descripcion: formulario[2].value, 
         cantidad: formulario[3].value 
       } 
+      if ( formulario[1].value === "" || formulario[2].value === "" || formulario[3].value === "" ){
+        formulario[1].style.borderColor = "red";
+        formulario[2].style.borderColor = "red";
+        formulario[3].style.borderColor = "red";
+    } else {
+        formulario[1].style.borderColor = "green";
+        formulario[2].style.borderColor = "green";
+        formulario[3].style.borderColor = "green";
+      
       bitacoras.push(bitacora);
    cont++;
    mostrar();
+    }
 });     
 
 const crearElemento = (bitacora, tbody) =>{ 
@@ -53,6 +63,7 @@ const crearElemento = (bitacora, tbody) =>{
    tr.appendChild(td); 
   }); 
  tbody.appendChild(tr); 
+ 
 } 
 
 const eliminar= (tbody)=>{
@@ -68,6 +79,7 @@ const eliminar= (tbody)=>{
       document.querySelector("#fecha").value = item.childNodes[1].textContent; 
       document.querySelector("#descp").value = item.childNodes[2].textContent; 
       document.querySelector("#cant").value = item.childNodes[3].textContent; 
+      
      }); 
     }) 
    } 
@@ -83,23 +95,38 @@ const eliminar= (tbody)=>{
     agregar(); 
    } 
 
+ 
+
 
    /*
-   
+   ¿Qué contienen la variable formulario ?
+   el contenido de el tag form
    ¿Qué hace el método evt.preventDefault() ?
+detiene la accion default de un metodo
+
    ¿Qué es lo que contiene formulario[x]?
+   los nodos de fecha, descripcion y capacidad
+
    ¿Qué contienen las variables tr y td ?
+un nodo de tipo tr y td
+
 
 ¿Qué contienen la variable content ?
+Los datos ingresados por nodo
 
 ¿Qué valor tendra tbody al finalizar la iteración?
+el valor del nodo tr, que a su vez tiene dentro el nodo td y content
 
 Describa en pocas palabras lo que realizara esta función
+Agrega los datos ingresados por nodo
 
 ¿Qué es lo que hace .firstChild?
+Selecciona el primer elemento
 
 Después de realizar el while ¿Comó quedara el elemento tbody ?
+
 ¿Qué es lo que obtenemos cuando se ejecuta item.childNodes[i].textContent;
+
 ¿Qué es lo que obtenemos cuando se realiza document.querySelector(".tabla-btc tbody") ?
 
  ¿Qué hace el método childElementCount?
